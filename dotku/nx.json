@@ -1,0 +1,46 @@
+{
+  "npmScope": "dotku",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "OWViN2RhYzktMjI3NS00NmFjLTg4OGYtNWM3MTYxMjM3MzgzfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "amazon-direct": {
+      "tags": []
+    },
+    "amazon-direct-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "amazon-direct"
+      ]
+    }
+  }
+}
